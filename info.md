@@ -39,24 +39,32 @@ The UI can:
 
 - Collect a new dataset.
 - Add episodes to an existing dataset by selecting it from the dataset list and using `Add to existing dataset`.
+- Show only the needed collect fields for new dataset vs append-to-existing mode.
 - Teleoperate the follower from the leader.
 - Save your usual robot, camera, dataset, training, and rollout parameters.
 - List local datasets from `~/lerobot/data` and `~/.cache/huggingface/lerobot`.
+- Rename datasets from the dataset list.
 - Archive datasets into `~/lerobot/archive/datasets` instead of deleting them permanently.
 - List local trained policies from `outputs/train` and `policies`.
-- Group policy checkpoints by training run and rename a policy run folder.
+- Group policy checkpoints by training run.
+- Expand a policy run to choose an individual checkpoint, such as `025000`, `030000`, or `last`, for rollout.
+- Rename or archive a policy run folder.
+- Resize or hide the left dataset/policy sidebar.
 - Start training from a selected dataset.
 - Run rollout from a selected policy.
 - Show the live command logs.
 - Copy command output from the log box.
+- Show parameter descriptions from the `?` marker next to form labels.
 
-During data collection, the episode control page still opens at:
+During data collection from the UI, the episode controls and live camera feed open in a popup inside the same browser tab.
+
+The embedded controls are served locally at:
 
 ```text
 http://127.0.0.1:8765
 ```
 
-Use the spacebar on that page for the normal rhythm:
+Use the spacebar inside that popup for the normal rhythm:
 
 ```text
 Record task -> Space

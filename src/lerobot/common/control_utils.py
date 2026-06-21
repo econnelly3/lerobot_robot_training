@@ -345,7 +345,8 @@ class _RecordControlWebServer:
             self._thread = threading.Thread(target=self._server.serve_forever, daemon=True)
             self._thread.start()
             print(f"LeRobot browser recording controls: {self.url}", flush=True)
-            webbrowser.open(self.url)
+            if os.environ.get("LEROBOT_RECORD_CONTROLS_NO_OPEN") != "1":
+                webbrowser.open(self.url)
             return True
         except Exception as exc:
             logging.warning("Could not start browser recording controls: %s", exc)
