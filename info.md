@@ -18,6 +18,53 @@ Camera:
 
 - Overhead USB camera index: `0`
 
+## Robot Training UI
+
+Use this local web interface instead of typing the long commands by hand:
+
+```bash
+cd ~/lerobot
+conda activate lerobot
+
+python scripts/robot_training_ui.py
+```
+
+It opens:
+
+```text
+http://127.0.0.1:8787
+```
+
+The UI can:
+
+- Collect a new dataset.
+- Add episodes to an existing dataset by selecting it from the dataset list and using `Add to existing dataset`.
+- Teleoperate the follower from the leader.
+- Save your usual robot, camera, dataset, training, and rollout parameters.
+- List local datasets from `~/lerobot/data` and `~/.cache/huggingface/lerobot`.
+- Archive datasets into `~/lerobot/archive/datasets` instead of deleting them permanently.
+- List local trained policies from `outputs/train` and `policies`.
+- Group policy checkpoints by training run and rename a policy run folder.
+- Start training from a selected dataset.
+- Run rollout from a selected policy.
+- Show the live command logs.
+- Copy command output from the log box.
+
+During data collection, the episode control page still opens at:
+
+```text
+http://127.0.0.1:8765
+```
+
+Use the spacebar on that page for the normal rhythm:
+
+```text
+Record task -> Space
+Reset scene -> Space
+Record next task -> Space
+Reset scene -> Space
+```
+
 ## Recalibrate Leader Arm
 
 Use this if the leader calibration needs to be redone:
